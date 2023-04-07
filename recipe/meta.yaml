@@ -1,18 +1,18 @@
 {% set name = "subby" %}
-{% set version = "0.1.7" %}
+{% set version = "0.2.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: a560a838d19749b68dc2d3867eb58ea47fd36f5f69e827f0aa961c9771e89926
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 71cbdfebb3de6735ed29b8aa5b0a730dfec17731cff0267bc747937da0861198
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -27,11 +27,11 @@ test:
     - subby
 
 about:
-  home: "https://github.com/jdidion/subby"
+  home: https://github.com/jdidion/subby
   license: Apache Software
   license_family: APACHE
-  license_file: LICENSE 
-  summary: "Subprocesses simplified"
+  license_file: LICENSE
+  summary: Subprocesses simplified
   dev_url: https://github.com/jdidion/subby
 
 extra:
